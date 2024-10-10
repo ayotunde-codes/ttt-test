@@ -44,7 +44,7 @@ export const BlogCard = ({
 
         <div className="flex items-start mt-auto gap-3">
           {/* avatar */}
-          <Avatar imageUrl={avaterUrl as string} />
+          <Avatar imageUrl={avaterUrl} />
           <p className="font-open-sans">{name}</p>
         </div>
       </div>

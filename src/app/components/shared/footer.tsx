@@ -5,7 +5,7 @@ import { Badge } from "../ui/badge";
 
 export const Footer = () => {
   return (
-    <div className="~pt-16/24 ~pb-16/28 font-open-sans">
+    <div className="~pt-16/24 ~pb-16/28 font-open-sans bg-white container">
       <div className="flex lg:flex-row flex-col ~gap-20/44">
         <div className="flex flex-col gap-10">
           <BrandLogoDark />
@@ -16,7 +16,7 @@ export const Footer = () => {
         </div>
         <div className="flex flex-wrap lg:flex-nowrap items-start ~gap-10/24">
           <div className="flex flex-col ~gap-5/7 ~text-lg/xl">
-            <p className="font-bold">Landings</p>
+            <p className="font-bold text-black">Landings</p>
             <Link
               className="text-gray-500 hover:text-brand-green ease-out duration-300 transition-colors"
               href="/"
@@ -37,7 +37,7 @@ export const Footer = () => {
             </Link>
           </div>
           <div className="flex flex-col ~gap-5/7 ~text-lg/xl">
-            <p className="font-bold">Company</p>
+            <p className="font-bold text-black">Company</p>
             <Link
               href="/About"
               className="text-gray-500 hover:text-brand-green ease-out duration-300 transition-colors"
@@ -59,7 +59,7 @@ export const Footer = () => {
             </Link>
           </div>
           <div className="flex flex-col ~gap-5/7 ~text-lg/xl">
-            <p className="font-bold">Resources</p>
+            <p className="font-bold text-black">Resources</p>
             <Link
               href="/Blog"
               className="text-gray-500 hover:text-brand-green ease-out duration-300 transition-colors"

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Open_Sans } from "next/font/google";
 import "./globals.css";
+import { Header } from "./components/shared/Header";
+import { Footer } from "./components/shared/footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -29,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${manrope} ${openSans} antialiased`}>{children}</body>
+      <body className={` ${manrope} ${openSans} antialiased`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

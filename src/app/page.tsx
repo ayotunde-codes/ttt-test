@@ -1,28 +1,24 @@
 import Image from "next/image";
-import { Header } from "./components/shared/Header";
 import { Avatar } from "./components/ui/avatar";
 import { blogCardData } from "./utils/new-letter-mock";
 import { BlogCard } from "./components/ui/blog-card";
 import heroImg from "@/app/assets/images/heroImg.png";
-import { Footer } from "./components/shared/footer";
 import { Input } from "./components/ui/input";
 import { Button } from "./components/ui/button";
 import ArcDesign from "@/app/assets/images/arc.svg";
+import avatarOne from "@/app/assets/images/avatarOne.png";
 
 export default function Home() {
   return (
     <div className="bg-white text-black">
-      {/* header */}
-      <Header />
-      {/* about */}
       <div className="container">
-        <div className="">
+        {/* hero section */}
+        <section>
           <div className="~pb-12/20 border-b border-black flex flex-col ~gap-6/10">
             <div className="flex flex-col text-dark-blue items-center gap-3 ~py-6/10">
               <p>Blog</p>
               <h1 className="font-normal text-center">Thoughts and words</h1>
             </div>
-            {/* images */}
             <div className="grid items-center lg:grid-cols-2 ~gap-14/24">
               <div>
                 <Image
@@ -43,14 +39,14 @@ export default function Home() {
                     Pitch termsheet backing validation focus release.
                   </h4>
                   <div className="flex items-start gap-3">
-                    <Avatar imageUrl="https://avatars.githubusercontent.com/u/10198965?v=4" />
+                    <Avatar imageUrl={avatarOne} />
                     <p className="font-open-sans">Chandler Bing</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* latest story */}
         <section className="py-28">
@@ -103,9 +99,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* footer */}
-          <Footer />
         </section>
       </div>
     </div>

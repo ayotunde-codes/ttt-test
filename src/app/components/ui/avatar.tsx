@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface AvatarProps {
-  imageUrl: string;
+  imageUrl: string | StaticImageData;
 }
 
 export const Avatar = ({ imageUrl }: AvatarProps) => {
