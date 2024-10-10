@@ -8,7 +8,7 @@ export const Footer = () => {
     <div className="~pt-16/24 ~pb-16/28 font-open-sans bg-white container">
       <div className="flex lg:flex-row flex-col ~gap-20/44">
         <div className="flex flex-col gap-10">
-          <BrandLogoDark />
+          <BrandLogoDark className="~w-24/[9.75rem]" />
           <p className="font-open-sans text-base text-gray-500 md:max-w-[500px] lg:max-w-[300px]">
             Social media validation business model canvas graphical user
             interface launch party creative facebook iPad twitter.
