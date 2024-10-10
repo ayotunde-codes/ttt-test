@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Manrope, Open_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -11,6 +12,21 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-manrope",
+  fallback: ["system-ui", "Roboto"],
+});
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-open-sans",
+  fallback: ["system-ui", "Roboto"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${manrope} ${openSans} antialiased`}
       >
         {children}
       </body>

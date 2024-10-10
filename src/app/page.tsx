@@ -1,101 +1,113 @@
 import Image from "next/image";
+import { Header } from "./components/shared/Header";
+import { Avatar } from "./components/ui/avatar";
+import { blogCardData } from "./utils/new-letter-mock";
+import { BlogCard } from "./components/ui/blog-card";
+import heroImg from "@/app/assets/images/heroImg.png";
+import { Footer } from "./components/shared/footer";
+import { Input } from "./components/ui/input";
+import { Button } from "./components/ui/button";
+import ArcDesign from "@/app/assets/images/arc.svg";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-white text-black">
+      {/* header */}
+      <Header />
+      {/* about */}
+      <div className="container">
+        <div className="">
+          <div className="~pb-12/20 border-b border-black flex flex-col ~gap-6/10">
+            <div className="flex flex-col text-dark-blue items-center gap-3 ~py-6/10">
+              <p>Blog</p>
+              <h1 className="font-normal text-center">Thoughts and words</h1>
+            </div>
+            {/* images */}
+            <div className="grid items-center lg:grid-cols-2 ~gap-14/24">
+              <div>
+                <Image
+                  alt="hero-image"
+                  className="~max-h-[26rem]/[31rem] w-full"
+                  src={heroImg}
+                  width={500}
+                  height={500}
+                />
+              </div>
+              <div className="flex flex-col gap-3">
+                <div className="flex gap-3 font-open-sans font-bold items-center">
+                  <p className="text-dark-blue">Category</p>
+                  <p className="text-gray-500 font-normal">November 22, 2021</p>
+                </div>
+                <div className="flex flex-col gap-5">
+                  <h4 className="font-normal">
+                    Pitch termsheet backing validation focus release.
+                  </h4>
+                  <div className="flex items-start gap-3">
+                    <Avatar imageUrl="https://avatars.githubusercontent.com/u/10198965?v=4" />
+                    <p className="font-open-sans">Chandler Bing</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* latest story */}
+        <section className="py-28">
+          <div className="px-4 flex flex-col gap-10 lg:px-12 xl:px-24">
+            <h4>Latest news</h4>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+              {blogCardData.map((blogCard) => (
+                <BlogCard
+                  category={blogCard.category}
+                  date={blogCard.date}
+                  title={blogCard.title}
+                  avaterUrl={blogCard.avaterUrl}
+                  name={blogCard.name}
+                  imageUrl={blogCard.imageUrl}
+                  key={blogCard.title}
+                />
+              ))}
+            </div>
+
+            <Button size="lg" className="w-max mx-auto ~mt-10/20">
+              Load more
+            </Button>
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-20">
+          <div className="rounded-xl bg-dark-blue overflow-hidden py-[72px] px-7 md:px-14 relative">
+            <Image
+              alt="arc-design"
+              src={ArcDesign}
+              className="absolute w-3/4  lg:w-3/5 top-0 lg:-top-7 right-0 pointer-events-none"
+            />
+            <div className="max-w-[712px] relative leading-[72px] mx-auto flex flex-col gap-12 items-center">
+              <h4 className="text-white text-center">
+                An enterprise template to ramp up your company website
+              </h4>
+              <div className="flex flex-col w-full items-center lg:max-w-[600px] h-max lg:flex-row gap-3 lg:gap-6">
+                <Input
+                  type="text"
+                  className="flex-1"
+                  placeholder="Enter your email address"
+                />
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="h-full w-full lg:w-max"
+                >
+                  Start now
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* footer */}
+          <Footer />
+        </section>
+      </div>
     </div>
   );
 }
